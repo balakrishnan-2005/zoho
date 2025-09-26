@@ -1,0 +1,20 @@
+import java.util.*;
+public class Main{
+    static int binaryToDecimal(int n){
+        int res=0;
+        int h=1;
+        while(n>0){
+            int k=n%10;
+            res=res+(k*h);
+            n=n/10;
+            h=h*2;
+        }
+        return res;
+    }
+    public static void main (String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int result=binaryToDecimal(n);
+        System.out.println(result);  
+    }
+}
