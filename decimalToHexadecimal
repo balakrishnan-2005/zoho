@@ -1,0 +1,26 @@
+import java.util.*;
+public class Main{
+    static String decimalToHexadecimal(int n){
+        String res="";
+        while(n>0){
+            int k=n%16;
+            if(k>=10){
+                k=k+55;
+                char m=(char)k;
+                res=m+res;
+            }
+            else{
+                res=k+res;
+            }
+            n=n/16;
+        }
+        return res;
+    }
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        String result=decimalToHexadecimal(n);
+        System.out.println(result);
+    }
+    
+}
