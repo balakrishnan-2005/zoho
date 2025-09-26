@@ -1,0 +1,22 @@
+import java.util.*;
+public class Main{
+    static int sumOfSingledigit(int n){
+        while(n>9)
+        {
+            int sum=0;
+            while(n>0){
+            int k=n%10;
+            sum=sum+k;
+            n=n/10;
+        }
+        n=sum;
+    }
+    return n;
+    }
+    public static void main (String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int result=sumOfSingledigit(n);
+        System.out.println(result);
+    }
+}
