@@ -19,3 +19,10 @@ public class Main
 	   System.out.println(o);
 	}
 }
+
+
+✅ Final Answer:
+
+Time Complexity: O(log n)
+
+Space Complexity: O(1)
