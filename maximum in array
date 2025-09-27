@@ -1,0 +1,31 @@
+import java.util.*;
+public class Main{
+static int isPrimeNumber(int n){
+        int flag = 0;
+        for(int i=2;i<=(n/2);i++){
+           if(n%i==0){
+             flag++;
+             break;
+           } 
+        }
+        return flag;
+    }
+    static int sumOfPrimeDigits(int n){//45637
+       int sum = 0;
+       while(n>0){
+          int k = n%10;//7
+          int res = isPrimeNumber(k);
+          if(res==0){
+            sum = sum+k;
+          }
+          n=n/10;
+       }
+       return sum; 
+    }
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+	    int n =s.nextInt();//45637
+	    int result = sumOfPrimeDigits(n);
+	    System.out.println(result);
+	}
+}
