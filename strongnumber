@@ -1,0 +1,31 @@
+import java.util.*;
+public class Main{
+    static int isfact(int n){// factorial finding
+        int fact=1;
+        for(int i=1;i<=n;i++){
+            fact=fact*i;
+        }
+        return fact;
+    }
+    static int isStrongNumber(int n){// strong number is nothing bot sumofeachfact number
+        int sum=0;
+        while(n>0){
+            int k=n%10;
+            int h=isfact(k);
+            sum=sum+h;
+            n=n/10;
+        }
+        return sum;
+    }
+    public static void main (String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int result=isStrongNumber(n);
+        if (result==n){
+            System.out.println("isStrongNumber");
+        } 
+        else{
+            System.out.println("is not StrongNumber");
+        }
+    }
+}
