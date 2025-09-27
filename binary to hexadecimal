@@ -1,0 +1,41 @@
+import java.util.*;
+public class Main{
+    static String decimalToHexadecimal(int n){
+        String res="";
+        while(n>0){
+            int k=n%16;
+            if(k>=10){
+                k=k+55;
+                char m=(char)k;
+                res=m+res;
+            }
+            else{
+                res=k+res;
+            }
+            n=n/16;
+        }
+        return res;
+    }
+    static int binaryToDecimal(int n){
+        int res=0;
+        int h=1;
+        while(n>0){
+            int k=n%10;
+            res=res+(k*h);
+            n=n/10;
+            h=h*2;
+        }
+        return res;
+    }
+    static String binaryToHexadecimal(int n){
+        int dec=binaryToDecimal(n);
+        return decimalToHexadecimal(dec);
+    }
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        String result=binaryToHexadecimal(n);
+        System.out.println(result);
+    }
+    
+}
