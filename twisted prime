@@ -1,0 +1,33 @@
+import java.util.*;
+public class Main{
+    static boolean isprime(int n){
+        for(int i=2;i<n;i++){
+            if(n%i==0){
+                return false;
+            }
+        }
+        return true;
+    }
+    static int revers(int n){
+        int res=0;
+        while(n>0){
+            int k=n%10;
+            res=res*10+k;
+            n=n/10;
+        }
+        return res;
+    }
+    public static void main (String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        if(isprime(n)){
+            int res=revers(n);
+            if(isprime(res)){
+               System.out.println("is tp"); 
+            }
+            else{
+                System.out.println("is not tp");
+            }
+        }
+}
+}
